@@ -16,14 +16,6 @@ function PresetSelector({ onChange }) {
 
         <option value="env">@babel/preset-env</option>
         <option value="typescript">@babel/preset-typescript</option>
-        <option value="flow">@babel/preset-flow</option>
-        <option value="plugin-transform-arrow-functions">
-          @babel/plugin-transform-arrow-functions
-        </option>
-        {/* <option value="plugin-proposal-class-properties">
-          @babel/plugin-proposal-class-properties
-        </option> */}
-        {/* <option value="minify">babel-preset-minify</option> */}
       </select>
     </div>
   );

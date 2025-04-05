@@ -11,6 +11,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { IoCode, IoSettings } from "react-icons/io5";
 import { VscDebugStart } from "react-icons/vsc";
 
+import { REACT, ENV, KNOWLEDGE_BASE } from "./constants/Information";
+
 import "./app.css";
 
 function App() {
@@ -29,18 +31,38 @@ function App() {
 
   // This function converts the code depending on presets
   function onConvert() {
+    let knowledge = KNOWLEDGE_BASE[preset.toUpperCase()];
     try {
       const output = Babel.transform(userInput, {
         presets: [preset],
-        // plugins: ["plugin-proposal-class-properties"],
+        filename: "script.ts",
       });
+
+      console.log(knowledge);
       console.log(typeof output.code);
       setUserInput(output.code);
-      toast.success("Successfully converted!");
+      toast.success(
+        <div>
+          <div
+            style={{
+              fontWeight: "bold",
+              fontSize: "1.2rem",
+              marginBottom: "4px",
+              color: "#1f2937",
+            }}
+          >
+            {knowledge.header}
+          </div>
+          <div>{knowledge.message}</div>
+        </div>,
+        {
+          duration: 6000,
+        }
+      );
     } catch (err) {
       console.log(err.message, "erre");
-      toast.error(err.message, {
-        duration: 6000,
+      toast.error(knowledge.error, {
+        duration: 8000,
       });
     }
   }
