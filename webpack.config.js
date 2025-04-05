@@ -22,6 +22,10 @@ module.exports = {
         test: /\.svg$/,
         loader: "svg-inline-loader",
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   plugins: [
@@ -29,5 +33,13 @@ module.exports = {
       template: "./public/index.html",
     }),
   ],
-  mode: "production",
+  mode: "development",
+
+  // Serving the dist folder at port 1234 - HOT reloading working
+  devServer: {
+    port: 1234,
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+  },
 };
