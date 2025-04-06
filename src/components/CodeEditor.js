@@ -6,9 +6,7 @@ function CodeEditor({ text, onChange }) {
       rows="15"
       onChange={(event) => onChange(event.target.value)}
       value={text}
-    >
-      {/* {text} */}
-    </textarea>
+    ></textarea>
   );
 }
 

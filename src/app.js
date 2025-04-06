@@ -37,9 +37,6 @@ function App() {
         presets: [preset],
         filename: "script.ts",
       });
-
-      console.log(knowledge);
-      console.log(typeof output.code);
       setUserInput(output.code);
       toast.success(
         <div>
@@ -89,7 +86,7 @@ function App() {
         <Toaster />
         <span className="settings">
           <IoSettings style={{ marginRight: 5 }} />
-          Configure additional settings in the preset selector
+          Configure options from the dropdown
         </span>
       </div>
 

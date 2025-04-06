@@ -6,13 +6,13 @@ function Footer() {
     <footer>
       <span>Made with ❤️ by Rohith</span>
       <div className="footer-links">
-        <a>
+        <a href="https://github.com/RohithNair27" target="_blank">
           <FaGithub size={25} />
         </a>
-        <a>
+        <a href="https://x.com/RohithNair_27" target="_blank">
           <FaXTwitter size={25} />
         </a>
-        <a>
+        <a href="https://www.linkedin.com/in/rohithknair27/" target="_blank">
           <FaLinkedin size={25} />
         </a>
       </div>
